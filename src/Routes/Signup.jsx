@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Navigate } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
 import {
   Button,
   Text,
@@ -19,8 +21,39 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import BackdropExample from "./LoginModal";
+import CompExample from "./Sucees";
 
 const Signup = () => {
+  const { user, setUser } = useContext(AuthContext);
+  const [spiin, isSpiin] = useState(false);
+  // console.log(user);
+  let LoginUser = {
+    username: "",
+    password: "",
+  };
+  const handeLoginUser = (e) => {
+    LoginUser.username = e.target.value;
+  };
+  const handelLogPass = (e) => {
+    LoginUser.password = e.target.value;
+  };
+  const handelclick = () => {
+    // console.log(LoginUser);
+    // console.log(user)
+    if (
+      LoginUser.username == user.username &&
+      LoginUser.password == user.password
+    ) {
+      alert("Login Sucesfully");
+      isSpiin(true);
+    } else {
+      alert("Wrong username & password");
+    }
+  };
+  if (spiin) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <Box>
       <Flex justify="center" marginTop={"70px"}>
@@ -39,16 +72,24 @@ const Signup = () => {
       <Flex justify={"center"} marginTop="25px">
         <Stack spacing={5}>
           <Box justify={"center"}>
-            <Input width={"305px"} placeholder="Usernanme" />
+            <Input
+              width={"305px"}
+              placeholder="Usernanme"
+              onChange={handeLoginUser}
+            />
           </Box>{" "}
           <Box justify={"center"}>
-            <Input width={"305px"} placeholder="Password" />
+            <Input
+              width={"305px"}
+              placeholder="Password"
+              onChange={handelLogPass}
+            />
           </Box>{" "}
           <Box>
             <Checkbox defaultChecked>Remember Me</Checkbox>
           </Box>
           <Box>
-            <Button w="305px" bg="#4296cb" color="white">
+            <Button w="305px" bg="#4296cb" color="white" onClick={handelclick}>
               SIGN IN
             </Button>
           </Box>

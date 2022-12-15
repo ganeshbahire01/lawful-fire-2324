@@ -12,9 +12,35 @@ import {
   FormLabel,
   FormControl,
   Input,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../Context/AuthContext";
+import CompExample from "./Sucees";
+
 function BackdropExample({ name, color }) {
+  const [spiin, isSpiin] = useState(false);
+  const { user, setUser } = useContext(AuthContext);
+  //   console.log(user);
+  const handelUsername = (e) => {
+    setUser({ ...user, username: e.target.value });
+  };
+  const handelPassword = (e) => {
+    setUser({ ...user, password: e.target.value });
+  };
+  const SignUp = () => {
+    // console.log(user);
+    // isSpiin(true);
+    const { username, password } = user;
+    if (username == "" || password == "") {
+      alert("Please fill both username and Password");
+    } else {
+      alert("SignUp Succesfull Please Login");
+      onClose();
+    }
+  };
+
   const OverlayOne = () => (
     <ModalOverlay
       bg="blackAlpha.300"
@@ -23,7 +49,6 @@ function BackdropExample({ name, color }) {
   );
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [overlay, setOverlay] = React.useState(<OverlayOne />);
-
   return (
     <>
       <Button
@@ -46,16 +71,27 @@ function BackdropExample({ name, color }) {
           <ModalBody>
             <FormControl>
               <FormLabel>{name === "Google" ? "Email" : name} Id</FormLabel>
-              <Input placeholder={`${name === "Google" ? "Email" : name} Id`} />
+              <Input
+                placeholder={`${name === "Google" ? "Email" : name} Id`}
+                name="username"
+                onChange={handelUsername}
+              />
             </FormControl>
 
             <FormControl mt={4}>
               <FormLabel>Password</FormLabel>
-              <Input placeholder="Password" type={"password"} />
+              <Input
+                placeholder="Password"
+                type={"password"}
+                name="password"
+                onChange={handelPassword}
+              />
             </FormControl>
           </ModalBody>
           <ModalFooter>
-            <Button onClick={onClose}>SinUP</Button>
+            <Button color="green" marginRight={"10px"} onClick={SignUp}>
+              SignUp
+            </Button>
             <Button onClick={onClose}>Close</Button>
           </ModalFooter>
         </ModalContent>

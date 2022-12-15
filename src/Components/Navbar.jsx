@@ -108,7 +108,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Stack direction={"row"} spacing={4} >
+    <Stack direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
@@ -269,14 +269,12 @@ const NAV_ITEMS = [
     li: "/workout",
     children: [
       {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "/login",
+        label: "Workout Videos",
+        subLabel: "Watch Video ",
       },
       {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "/",
+        label: "Custum Workout",
+        subLabel: "Add Custom ",
       },
     ],
   },
@@ -285,14 +283,12 @@ const NAV_ITEMS = [
     li: "/programs",
     children: [
       {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
+        label: "Workout Program",
+        subLabel: "Take your Program",
       },
       {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
+        label: "Meal Planes",
+        subLabel: "",
       },
     ],
   },
@@ -301,111 +297,42 @@ const NAV_ITEMS = [
     li: "/helhty_living",
     children: [
       {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "/hii",
+        label: "",
+        subLabel: "",
       },
       {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "/hello",
+        label: "",
+        subLabel: "",
       },
     ],
   },
   {
     label: "COMUNITY",
-    li: "/comunity",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "/",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "/",
-      },
-    ],
   },
   {
     label: "ABOUT",
-    li: "/about",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
   },
   {
     label: "STORE",
-    li: "/store",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
   },
   {
     label: "MEMBERSHIP",
-    li: "/membership",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
   },
   {
     label: "SIGNUP",
     li: "/signup",
     children: [
       {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
+        label: "",
+        subLabel: "",
       },
       {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
+        label: "",
+        subLabel: "",
       },
     ],
   },
   {
     label: "CONTACT",
-    li: "/contact",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
   },
 ];
