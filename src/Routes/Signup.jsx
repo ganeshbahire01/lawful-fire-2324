@@ -9,7 +9,16 @@ import {
   Stack,
   Checkbox,
   textDecoration,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from "@chakra-ui/react";
+import BackdropExample from "./LoginModal";
 
 const Signup = () => {
   return (
@@ -18,12 +27,8 @@ const Signup = () => {
         <Text fontSize="45px">Sign In</Text>
       </Flex>
       <Flex justify={"center"} gap="20px" marginTop={"15px"}>
-        <Button w="250px" bg="blue" color="white" _hover="none">
-          Facebook
-        </Button>
-        <Button w="250px" bg="red" color="white" _hover="none">
-          Google
-        </Button>
+        <BackdropExample name={"Facebook"} color="blue" />
+        <BackdropExample name={"Google"} color="red" />
       </Flex>
       <Flex justify={"center"} marginTop="20px">
         <Text color={"gray.300"}>
