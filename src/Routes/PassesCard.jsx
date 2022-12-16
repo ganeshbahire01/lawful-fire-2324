@@ -16,10 +16,10 @@ import {
   Divider,
   ButtonGroup,
 } from "@chakra-ui/react";
-const PassesCard = ({ img, day, price }) => {
+const PassesCard = ({ img, day, price, id }) => {
   const handelClick = () => {
     let x = JSON.parse(localStorage.getItem("cart")) || [];
-    let obj = { img, day, price };
+    let obj = { id, img, day, price };
     x.push(obj);
     localStorage.setItem("cart", JSON.stringify(x));
     alert("Item Added to Cart Sucessfulyy");
@@ -37,7 +37,7 @@ const PassesCard = ({ img, day, price }) => {
         <Heading size="md">{day}</Heading>
         <Flex mt="6" spacing="3" gap="50px">
           <Text color="blue.600" fontSize="lg">
-            {price}
+            ${price}
           </Text>
           <Button variant="solid" colorScheme="blue" onClick={handelClick}>
             Add to Bag
