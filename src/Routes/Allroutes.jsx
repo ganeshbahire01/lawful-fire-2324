@@ -1,10 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import About from "./About";
+import Cart from "./Cart";
 import Comunity from "./Comunity";
 import Footer from "./Footer";
 import Health from "./Health";
 import Home from "./Home";
 import Membership from "./Membership";
+import Passes from "./Passes";
 import Programs from "./Programs";
 import Signup from "./Signup";
 import Store from "./Store";
@@ -23,6 +25,8 @@ const AllRoute = () => {
       <Route path="/membership" element={<Membership />} />
       <Route path="/store" element={<Store />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/cart" element={<Cart />}></Route>
+      <Route path="/pases" element={<Passes />}></Route>
     </Routes>
   );
 };

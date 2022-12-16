@@ -23,12 +23,12 @@ import {
   CartIcon,
   Search2Icon,
 } from "@chakra-ui/icons";
-
+import { AiTwotoneShopping } from "react-icons/ai";
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box marginTop={"10PX"} justifyContent="center" padding="30px">
+    <Box marginTop={"2px"} justifyContent="center" padding="30px">
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -66,7 +66,7 @@ export default function Navbar() {
                 boxSize="50px"
                 width="100px"
                 src="https://i.ibb.co/cbkfwXV/Fitness-Center-Logo.png"
-                alt="Dan Abramov"
+                alt="LOGO"
               />
             </Link>
           </Text>
@@ -88,8 +88,11 @@ export default function Navbar() {
               justify={"flex-end"}
               direction={"row"}
               spacing={6}
+              fontSize="20px"
             >
-              <Search2Icon />
+              <Link to="/cart">
+                <AiTwotoneShopping />
+              </Link>
             </Stack>
           </Flex>
         </Flex>
@@ -271,10 +274,12 @@ const NAV_ITEMS = [
       {
         label: "Workout Videos",
         subLabel: "Watch Video ",
+        href: "/workout",
       },
       {
         label: "Custum Workout",
         subLabel: "Add Custom ",
+        href: "/workout",
       },
     ],
   },
@@ -285,10 +290,12 @@ const NAV_ITEMS = [
       {
         label: "Workout Program",
         subLabel: "Take your Program",
+        href: "/programs",
       },
       {
         label: "Meal Planes",
-        subLabel: "",
+        subLabel: "Check Your Plan Here",
+        href: "/programs",
       },
     ],
   },
@@ -297,12 +304,14 @@ const NAV_ITEMS = [
     li: "/helhty_living",
     children: [
       {
-        label: "",
-        subLabel: "",
+        label: "Health ",
+        subLabel: "Health Club",
+        href: "/helhty_living",
       },
       {
-        label: "",
-        subLabel: "",
+        label: "Nutrition",
+        subLabel: "Nutrional Plan",
+        href: "/helhty_living",
       },
     ],
   },
@@ -323,12 +332,14 @@ const NAV_ITEMS = [
     li: "/signup",
     children: [
       {
-        label: "",
-        subLabel: "",
+        label: "JOIN",
+        subLabel: "join our Comunity",
+        href: "/signup",
       },
       {
-        label: "",
-        subLabel: "",
+        label: "Sign Up",
+        subLabel: "Sign up here",
+        href: "/signup",
       },
     ],
   },

@@ -21,6 +21,7 @@ import {
 } from "@chakra-ui/react";
 
 import "../Styles/Landing.css";
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <div>
@@ -48,8 +49,8 @@ function Home() {
           </Square>
         </Flex>
       </div>
-      <Box bg="gray.200" >
-        <HStack margin={"auto"} textAlign="center" width="350px" >
+      <Box bg="gray.200">
+        <HStack margin={"auto"} textAlign="center" width="350px">
           <Box>
             <Text fontSize={"35px"}>Introducing</Text>
             <Text fontSize={"40px"}>FB Plus Passes</Text>
@@ -58,10 +59,11 @@ function Home() {
               without a long-term subscription. Choose a pass that fits your
               budget and your schedule.
             </p>
-
-            <Button bg={"black"} color="white">
-              BUY A PASS
-            </Button>
+            <Link to="/pases">
+              <Button bg={"black"} color="white">
+                BUY A PASS
+              </Button>
+            </Link>
           </Box>
         </HStack>
         <HStack justify="center">
@@ -85,14 +87,16 @@ function Home() {
           <Image src="https://cloudfront.fitnessblender.com/assets/img/homepage/community-1440.webp" />
         </HStack>
       </div>
-      <Box marginLeft={"80px"}>
+      <Box margin={("80px", "0px", "20px", "80px")}>
         <Text fontSize={"40px"}>Not sure where to start?</Text>
         <Text>
           Programs offer day-to-day guidance on an interactive calendar to keep
           you on track.
         </Text>
       </Box>
-      <Liupdate />
+      <Box margin={("20px", "0px", "35px")}>
+        <Liupdate />
+      </Box>
     </div>
   );
 }
