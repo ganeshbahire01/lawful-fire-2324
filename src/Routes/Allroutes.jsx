@@ -11,7 +11,7 @@ import Programs from "./Programs";
 import Signup from "./Signup";
 import Store from "./Store";
 import WorkOut from "./WorkOut";
-
+import Multistep from "./Paymnet";
 const AllRoute = () => {
   return (
     <Routes>
@@ -27,6 +27,7 @@ const AllRoute = () => {
       <Route path="/signup" element={<Signup />} />
       <Route path="/cart" element={<Cart />}></Route>
       <Route path="/pases" element={<Passes />}></Route>
+      <Route path="/payment" element={<Multistep />} />
     </Routes>
   );
 };

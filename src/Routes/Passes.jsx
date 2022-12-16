@@ -41,7 +41,7 @@ const Passes = () => {
           marginBottom={"120px"}
         >
           {data.map((el) => (
-            <PassesCard img={el.img} day={el.day} price={el.price} />
+            <PassesCard img={el.img} day={el.day} price={el.price} id={el.id} />
           ))}
         </SimpleGrid>
       </Box>
@@ -68,7 +68,7 @@ const Passes = () => {
           paddingBottom={"120px"}
         >
           {secData.map((el) => (
-            <PassesCard img={el.img} day={el.day} price={el.price} />
+            <PassesCard img={el.img} day={el.day} price={el.price} id={el.id} />
           ))}
         </SimpleGrid>
       </Box>
