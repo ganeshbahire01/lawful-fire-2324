@@ -37,7 +37,9 @@ function Home() {
                 approach to feeling great.
               </p>
 
-              <Button bg={"black"}> JOIN NOW</Button>
+              <Button bg={"black"} mt="20px">
+                 JOIN NOW
+              </Button>
             </Box>
           </VStack>
           <Square size="450px">
@@ -60,7 +62,7 @@ function Home() {
               budget and your schedule.
             </p>
             <Link to="/pases">
-              <Button bg={"black"} color="white">
+              <Button bg={"black"} color="white" mt="25px">
                 BUY A PASS
               </Button>
             </Link>
