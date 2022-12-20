@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 
 import { useToast } from "@chakra-ui/react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 const Form1 = () => {
   const [show, setShow] = React.useState(false);
@@ -280,6 +280,7 @@ export default function Multistep() {
               </Button>
             </Flex>
             {step === 3 ? (
+              <Link to={"/"}>
               <Button
                 w="7rem"
                 colorScheme="red"
@@ -289,14 +290,15 @@ export default function Multistep() {
                     title: "Payment Sucessfull",
                     description:
                       "Thanks for Buying Pass We hope You Enjoy the Plan",
-                    status: "success",
+                      status: "success",
                     duration: 3000,
                     isClosable: true,
                   });
                 }}
-              >
+                >
                 Submit
               </Button>
+                </Link>
             ) : null}
           </Flex>
         </ButtonGroup>
